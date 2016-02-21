@@ -1,0 +1,90 @@
+
+<style>
+        
+html{
+    
+}
+
+body{
+    align-content: center;
+    padding: 0 15% 0 15%;
+
+    background:url("http://discover.point.edu/wp-content/uploads/2015/06/Study-Group.jpg");
+    background-repeat:no-repeat;
+    background-position:center top;
+   
+}
+
+h2{
+    color:red;
+    text-align: right;
+    
+}
+
+/*#find {
+    color:blue;
+    display:inline;
+    text-align:right;
+    position:relative;
+    float:right;
+} */
+
+#droplist {
+    
+    color:blue;
+    
+    
+    
+}
+
+#droplist:hover {
+    
+    color:red;
+}
+         
+.dropdownclick{
+    display:none;
+}
+
+.is-visible{
+    display:block;
+    
+}
+    
+li{
+    list-style: none;
+    text-align:left;
+    
+}
+
+ul{
+    padding:0px;
+    margin:0px;
+}
+
+
+    
+    
+}
+        
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+
+
+
+
+
