@@ -23,3 +23,5 @@ def findTail(_head)
 
 def addTopicArray(_address)
   #add user to linked-list associated with return address from checkTopicArray fcn
+
+# topicArray = []
