@@ -14,8 +14,8 @@
     </title>
 
     <style>
-    
-        
+
+
 
 
 
@@ -25,67 +25,114 @@
 
 
 <body>
-    
-    
-    
-   
-    <h1 id="Stud"> &mdash; &nbsp;Study.Buddy </h1>
-    
-    
 
-    
-    
-    <div id = "welcome">  
+
+
+
+    <h1 id="Stud"> &mdash; &nbsp;Study.Buddy </h1>
+
+
+
+
+
+    <div id = "welcome">
        <h1> Welcome to Study.Buddy CU </h1>
         <p> Please enter your name, email, and course info below to be study with other CU Students!</p>
-    
-        <form action="myDataRef" method="get" id="classinfo">
+
+        <!-- <form action="myDataRef" method="get" id="classinfo">
 Name: &nbsp;<input type="text" name="name"><br>
-Email: &nbsp;<input type="text" name="Email"><br>
-Class (Ex. CSCI,HUMN): <input type="text" name="Class"><br>
-Class Number (Ex. 1310): <input type="text" name="Class">
-       <br>     
-<button class="submit" type="submit" form="class">Submit </button>    
+Email: &nbsp;<input type="text" name="email"><br>
+Course (Ex. CSCI 1300): <input type="text" name="course"><br>
+       <br>
+<button class="submit" type="submit" form="class">Submit </button>
 
-        </form>
-            
-    </div>    <!-- Welcome end-->   
-    
-    
-        
+        </form> -->
 
-            
-        
+    </div>    <!-- Welcome end-->
+
+
+
+
+
+
    <!-- <a href="javascript:togglevisibility('Find a Study Buddy')";> -->
-           
-            
-            
-            
-
-     
-  
-    
-      
-      
-      
-      
-
-       
-       
-       
-      
-      
-   
 
 
-        
-        
-       
-        
-        
-  
-   
-    
+   <div id='messagesDiv'></div>
+   <form id="lookup">
+       <input type='text' id='nameInput' placeholder='Name' >
+       <input type='text' id='courseInput' placeholder='course' >
+       <input type='text' id='emailInput' placeholder='email' >
+           <input type="submit">
+   </form>
+   <script>
+     var myDataRef = new Firebase('https://studybudee3.firebaseio.com');
+     $('#lookup').submit(function (e) {
+         e.preventDefault();
+         console.log("SUBMIT");
+         var name = $('#nameInput').val();
+         var course = $('#courseInput').val();
+         var email = $('#emailInput').val();
+         var enrollee = {
+           name: name,
+           email: email
+         };
+         var obj = {};
+         obj[course] = {};
+         var run = false;
+         myDataRef.child(course).on("value", function(snapshot){
+           console.log("before if",run, snapshot.key(), snapshot.val());
+           if(!run){
+             run = true;
+             if (snapshot.val() == null) {
+               //console.log("does not has val", snapshot.val());
+               var objRef = myDataRef.update(obj);
+             }
+             var emails = "";
+             for (var key in snapshot.val())
+             {
+               //debugger
+               emails += snapshot.val()[key].email + ", ";
+             }
+             alert(emails);
+             //alert(findMatches(myDataRef.child(course).enrolees))
+             myDataRef.child(course).push(enrollee);
+           }
+         })
+         //myDataRef.push({name: name, text: [text]});
+         $('#nameInput').val('');
+         $('#courseInput').val('');
+         $('#emailInput').val('');
+
+         return false;
+     });
+     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -93,11 +140,7 @@ Class Number (Ex. 1310): <input type="text" name="Class">
 
 
     </body>
-    
-    
-    
+
+
+
 </html>
-
-
-
-
