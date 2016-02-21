@@ -16,7 +16,7 @@ class Topic():
                 Topic.headPointer = _headPointer
 
 def addNewUser(_name, _email, _topic):
-  # make instance of class using parameters
+  # make instance of user class using parameters
   return 0
   
 def checkTopicArray(_topic):
@@ -26,10 +26,15 @@ def checkTopicArray(_topic):
         return 0
 
 def findTail(_head):
-        return 0
+        tmp = head
+        while tmp!=NULL:
+                tmp = tmp.next
+        return tmp
 
 def addTopicArray(_address):
   #add user to linked-list associated with return address from checkTopicArray fcn
         return 0
+
+# topicArray = []
 
 
