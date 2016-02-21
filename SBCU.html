@@ -60,10 +60,10 @@ Course (Ex. CSCI 1300): <input type="text" name="course"><br>
 
    <div id='messagesDiv'></div>
    <form id="lookup">
-       <input type='text' id='nameInput' placeholder='Name' >
-       <input type='text' id='courseInput' placeholder='course' >
-       <input type='text' id='emailInput' placeholder='email' >
-           <input type="submit">
+       Name<input type='text' id='nameInput' placeholder='Name' ><br>
+       Course<input type='text' id='courseInput' placeholder='course' ><br>
+       Email<input type='text' id='emailInput' placeholder='email' ><br>
+           <button class="submit" type="submit" form="class">Submit </button>
    </form>
    <script>
      var myDataRef = new Firebase('https://studybudee3.firebaseio.com');
