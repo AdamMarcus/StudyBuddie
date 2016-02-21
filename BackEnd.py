@@ -11,15 +11,26 @@ print (adam.email)
 print (adam.studying)
 
 '''
-def  addNewUser(_name, _email, _topic):
+class Topic():
+        def __init__(_topicName, _headPointer):
+                Topic.topicName = _topicName
+                Topic.headPointer = _headPointer
+
+def addNewUser(_name, _email, _topic):
   # make instance of class using parameters
+  return 0
   
-def checkTopicArray(_topic)
+def checkTopicArray(_topic):
   #return address if in array
   #return address of next open space if not in array and add topic to that address
   #array doubling if needed
+        return 0
 
-def findTail(_head)
+def findTail(_head):
+        return 0
 
-def addTopicArray(_address)
+def addTopicArray(_address):
   #add user to linked-list associated with return address from checkTopicArray fcn
+        return 0
+
+
