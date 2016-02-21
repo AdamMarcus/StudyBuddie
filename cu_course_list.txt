@@ -1,0 +1,5 @@
+# This file contains the classes for CU boulder
+
+CSCI 2280
+WRTG 1000
+IPHY 1000
