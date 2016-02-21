@@ -9,7 +9,6 @@ adam = User('Adam', 'adam@colorado.edu', 'CSCI')
 print (adam.name)
 print (adam.email)
 print (adam.studying)
-
 '''
 class Topic():
         def __init__(_topicName, _headPointer):
